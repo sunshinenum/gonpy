@@ -7,9 +7,8 @@ import (
 	"fmt"
 )
 
-
-// save float64 2D matrix
-func save2DFloat64Matrix(matrix [][]float64, path string) {
+// Save2DFloat64Matrix float64 2D matrix
+func Save2DFloat64Matrix(matrix [][]float64, path string) {
 	writer, _ := NewFileWriter(path)
 	writer.Shape = []int{len(matrix), len(matrix[0])}
 	writer.Version = 2
@@ -19,7 +18,6 @@ func save2DFloat64Matrix(matrix [][]float64, path string) {
 	}
 	writer.WriteFloat64(arr)
 }
-
 
 // GetComplex128 returns the array data as a slice of complex128 values.
 func (rdr *NpyReader) GetComplex128() ([]complex128, error) {
